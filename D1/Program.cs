@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using System.Collections.Generic;
 
 namespace D01
 {
@@ -43,14 +42,14 @@ namespace D01
             int count = 0;
             using (var reader = new StreamReader(filePath)) 
             {
-                var line = reader.ReadLine();
+                int current;
+
                 int previous = 0;
-                if(!String.IsNullOrEmpty(line))
+                if(Int32.TryParse(reader.ReadLine(), out current))
                 {
-                    previous = Convert.ToInt32(line);
-                    while((line = reader.ReadLine()) != null) 
+                    previous = current;
+                    while(Int32.TryParse(reader.ReadLine(), out current)) 
                     {
-                        int current = Convert.ToInt32(line);
                         if (current > previous)
                         {
                             count++;
