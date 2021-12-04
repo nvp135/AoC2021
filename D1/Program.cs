@@ -9,11 +9,11 @@ namespace D01
         static void Main(string[] args)
         {
             string filePath = "input.txt";
-            int[] measurements = System.IO.File.ReadAllText(filePath).Split(Environment.NewLine).Select(Int32.Parse).ToArray();
-            Console.WriteLine(NumberOfIncreases(measurements));
-            Console.WriteLine(NumberOfIncreases(filePath));
-            Console.WriteLine(NumberOfThreeIncreases(measurements));
-            Console.WriteLine(NumberOfThreeIncreases(filePath));
+            int[] measurements = File.ReadAllText(filePath).Split(Environment.NewLine).Select(Int32.Parse).ToArray();
+            Console.WriteLine(CalculateNumberOfIncreases(measurements));
+            Console.WriteLine(CalculateNumberOfIncreases(filePath));
+            Console.WriteLine(CalculateNumberOfThreeIncreases(measurements));
+            Console.WriteLine(CalculateNumberOfThreeIncreases(filePath));
         }
 
         /// <summary>
@@ -21,7 +21,7 @@ namespace D01
         /// </summary>
         /// <param name="measurements">Array of values</param>
         /// <returns></returns>
-        static int NumberOfIncreases(int[] measurements)
+        static int CalculateNumberOfIncreases(int[] measurements)
         {
             int count = 0;
             for (int i = 1; i < measurements.Length; i++)
@@ -37,7 +37,7 @@ namespace D01
         /// </summary>
         /// <param name="filePath">Path to file</param>
         /// <returns></returns>
-        static int NumberOfIncreases(string filePath)
+        static int CalculateNumberOfIncreases(string filePath)
         {
             int count = 0;
             using (var reader = new StreamReader(filePath)) 
@@ -66,7 +66,7 @@ namespace D01
         /// </summary>
         /// <param name="measurements">Array of numbers</param>
         /// <returns></returns>
-        static int NumberOfThreeIncreases(int[] measurements)
+        static int CalculateNumberOfThreeIncreases(int[] measurements)
         {
             int count = 0;
             for (int i = 3; i < measurements.Length; i++)
@@ -82,7 +82,7 @@ namespace D01
         /// </summary>
         /// <param name="filePath">Path to file</param>
         /// <returns></returns>
-        static int NumberOfThreeIncreases(string filePath)
+        static int CalculateNumberOfThreeIncreases(string filePath)
         {
             int count = 0;
             using (var reader = new StreamReader(filePath))
