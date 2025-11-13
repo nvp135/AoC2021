@@ -147,8 +147,8 @@ namespace D15
         static List<(int x, int y)> ways = new List<(int, int)> {
             ( 1, 0 ),
             ( 0, 1 ),
-            ( -1, 0),
-            (0, -1)
+            //( -1, 0),
+            //(0, -1)
             };
 
         class Edge
