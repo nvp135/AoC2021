@@ -47,7 +47,6 @@ namespace D16
         long CalculateOperator(ref int pointer, long typeId)
         {
             var result = new List<long>();
-            int j = 0;
             var lengthTypeID = DecodeBits(ref pointer, 1);
 
             if (lengthTypeID == 0)
